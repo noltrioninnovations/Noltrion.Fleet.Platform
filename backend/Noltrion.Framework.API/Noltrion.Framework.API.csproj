@@ -23,5 +23,14 @@
     <ProjectReference Include="..\Noltrion.Framework.Domain\Noltrion.Framework.Domain.csproj" />
     <ProjectReference Include="..\Noltrion.Framework.Application\Noltrion.Framework.Application.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+    <None Update="appsettings.Development.json">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+
 
 </Project>
