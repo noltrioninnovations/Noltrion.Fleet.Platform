@@ -1,0 +1,6 @@
+@Noltrion.Fleet.API_HostAddress = http://localhost:5207
+
+GET {{Noltrion.Fleet.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

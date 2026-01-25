@@ -1,0 +1,7 @@
+E:\Gobi\Pro\FleetX\Noltrion.Fleet.Platform\backend\Noltrion.FleetX.Infrastructure\Services\Planning\PlanningService.cs(197,31): error CS1061: 'IUnitOfWork' does not contain a definition for 'CommitAsync' and no accessible extension method 'CommitAsync' accepting a first argument of type 'IUnitOfWork' could be found (are you missing a using directive or an assembly reference?) [E:\Gobi\Pro\FleetX\Noltrion.Fleet.Platform\backend\Noltrion.FleetX.Infrastructure\Noltrion.FleetX.Infrastructure.csproj]
+
+Build FAILED.
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:05.92

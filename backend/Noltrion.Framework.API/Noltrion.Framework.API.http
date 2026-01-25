@@ -1,0 +1,6 @@
+@Noltrion.Framework.API_HostAddress = http://localhost:5038
+
+GET {{Noltrion.Framework.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

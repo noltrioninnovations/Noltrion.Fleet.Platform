@@ -1,0 +1,7 @@
+﻿
+> frontend@0.0.0 build
+> tsc -b && vite build
+
+src/components/layout/MainLayout.tsx(22,21): error TS18048: 'user.roles' is possibly 'undefined'.
+src/components/layout/MainLayout.tsx(22,59): error TS18048: 'user.roles' is possibly 'undefined'.
+src/components/layout/MainLayout.tsx(23,23): error TS18048: 'user.roles' is possibly 'undefined'.

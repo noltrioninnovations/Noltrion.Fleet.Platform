@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Noltrion.FleetX.Application\Noltrion.FleetX.Application.csproj" />
+    <ProjectReference Include="..\Noltrion.Framework.Infrastructure\Noltrion.Framework.Infrastructure.csproj" />
+    <ProjectReference Include="..\Noltrion.Framework.Application\Noltrion.Framework.Application.csproj" />
+    <ProjectReference Include="..\Noltrion.Framework.Shared\Noltrion.Framework.Shared.csproj" />
+    <ProjectReference Include="..\Noltrion.Framework.Domain\Noltrion.Framework.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="*">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="*">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.1" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
