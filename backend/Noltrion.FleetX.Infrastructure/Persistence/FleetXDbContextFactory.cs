@@ -20,8 +20,7 @@ namespace Noltrion.FleetX.Infrastructure.Persistence
             else
             {
                 var connectionString = System.Environment.GetEnvironmentVariable("DefaultConnection") ?? "Data Source=DESKTOP-L1S9R7K;Initial Catalog=FleetX;Integrated Security=True;TrustServerCertificate=True;MultipleActiveResultSets=True";
-                optionsBuilder.UseSqlServer(connectionString)
-                    .ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
+                optionsBuilder.UseSqlServer(connectionString);
             }
 
             return new FleetXDbContext(optionsBuilder.Options);
