@@ -100,7 +100,10 @@ builder.Services.AddAuthentication(options =>
 
 // Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.CustomSchemaIds(type => type.ToString());
+});
 
 // CORS
 builder.Services.AddCors(options =>
@@ -118,11 +121,8 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
 
 app.UseCors("AllowFrontend");
 
@@ -132,6 +132,11 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapGet("/", context =>
+{
+    context.Response.Redirect("/swagger/index.html");
+    return System.Threading.Tasks.Task.CompletedTask;
+});
 
 // Seed Database
 using (var scope = app.Services.CreateScope())
@@ -141,8 +146,11 @@ using (var scope = app.Services.CreateScope())
     {
         var context = services.GetRequiredService<FleetXDbContext>();
         context.Database.Migrate(); // Use Migrate instead of EnsureCreated in production
-        await Noltrion.Framework.Infrastructure.Persistence.DbInitializer.SeedAsync(context);
-        await Noltrion.FleetX.Infrastructure.Persistence.FleetXSeeder.SeedAsync(context);
+        if (app.Environment.IsDevelopment())
+        {
+            await Noltrion.Framework.Infrastructure.Persistence.DbInitializer.SeedAsync(context);
+            await Noltrion.FleetX.Infrastructure.Persistence.FleetXSeeder.SeedAsync(context);
+        }
     }
     catch (System.Exception ex)
     {
