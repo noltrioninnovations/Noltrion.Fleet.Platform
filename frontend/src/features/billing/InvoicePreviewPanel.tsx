@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Printer, Download } from 'lucide-react';
+import { X, Printer } from 'lucide-react';
 import type { Invoice } from '../../services/invoiceService';
 
 interface InvoicePreviewPanelProps {

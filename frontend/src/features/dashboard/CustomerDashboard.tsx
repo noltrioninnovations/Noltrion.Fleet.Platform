@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Package, Truck, CheckCircle, Clock } from 'lucide-react';
 // import { getTrips } from '../../services/tripService'; // Removed
-import type { Trip } from '../../types/trip';
 
 const StatCard = ({ title, value, subtext, icon: Icon, color }: any) => (
     <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">

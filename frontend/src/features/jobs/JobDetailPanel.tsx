@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import type { Job } from '../../services/jobService';
-import { X, MapPin, Edit, Trash2, Package, Calendar, FileText, User } from 'lucide-react';
+import { X, MapPin, Edit, Trash2, Package, Calendar } from 'lucide-react';
 import { MapDisplay } from '../../components/ui/MapDisplay';
 
 interface JobDetailPanelProps {

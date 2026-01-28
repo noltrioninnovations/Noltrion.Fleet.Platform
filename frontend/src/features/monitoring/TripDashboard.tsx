@@ -126,7 +126,7 @@ export const TripDashboard = () => {
                                         <Truck size={14} />
                                     </div>
                                     <div className={`absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full border-2 border-white 
-                                        ${trip.tripStatus === 'InProgress' ? 'bg-green-500' :
+                                        ${trip.tripStatus === 'InTransit' ? 'bg-green-500' :
                                             trip.tripStatus === 'Completed' ? 'bg-gray-400' : 'bg-blue-500'}`}></div>
                                 </div>
 
@@ -137,7 +137,7 @@ export const TripDashboard = () => {
                                             {trip.tripNumber || 'Pending'}
                                         </h4>
                                         <span className={`text-[9px] px-1.5 rounded font-bold uppercase
-                                            ${trip.tripStatus === 'Pickup' ? 'text-blue-700 bg-blue-50' :
+                                            ${trip.tripStatus === 'StartLoad' ? 'text-blue-700 bg-blue-50' :
                                                 trip.tripStatus === 'InTransit' ? 'text-indigo-700 bg-indigo-50' :
                                                     trip.tripStatus === 'Delivery' ? 'text-orange-700 bg-orange-50' :
                                                         trip.tripStatus === 'Completed' ? 'text-gray-600 bg-gray-100' :

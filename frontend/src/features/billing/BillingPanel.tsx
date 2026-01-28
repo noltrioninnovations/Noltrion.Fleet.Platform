@@ -60,7 +60,7 @@ export const BillingPanel: React.FC<BillingPanelProps> = ({ trip, isOpen, onClos
         setLoading(true);
         try {
             await updateInvoiceStatus(invoice.id, status);
-            setInvoice({ ...invoice, status });
+            setInvoice({ ...invoice, status: status as 'Cancelled' | 'Accrued' | 'Invoiced' | 'PaymentReceived' | 'Draft' | 'Approved' });
         } catch (err) {
             setError("Failed to update status");
         } finally {

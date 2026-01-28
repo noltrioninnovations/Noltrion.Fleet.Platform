@@ -11,7 +11,7 @@ import {
     type MaintenanceRecord
 } from '../../services/maintenanceService'; // Import maintenance service
 
-import { X, Truck, User, Battery, Activity, MapPin, Navigation, Edit, DollarSign, PenTool, Plus } from 'lucide-react';
+import { X, Truck, User, Activity, MapPin, Navigation, Edit, DollarSign, PenTool, Plus } from 'lucide-react';
 import { MapDisplay } from '../../components/ui/MapDisplay';
 
 interface VehicleDetailPanelProps {

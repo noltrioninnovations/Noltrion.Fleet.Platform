@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Calendar, MapPin, Navigation, Package } from 'lucide-react';
+import { Calendar, Navigation, Package } from 'lucide-react';
 import { getTrips } from '../../services/tripService';
 import type { Trip } from '../../types/trip';
 import { useAuth } from '../../contexts/AuthContext';
@@ -20,7 +20,7 @@ export const DriverDashboard = () => {
             // For now, simple mock filter or show all if user matching is hard without driverId
             const filtered = allTrips.filter(t =>
                 t.driver?.fullName === user?.username ||
-                t.tripStatus === 'InProgress' // Fallback: Show active stuff for demo if name mismatch
+                t.tripStatus === 'InTransit' // Fallback: Show active stuff for demo if name mismatch
             );
             setMyTrips(filtered.length > 0 ? filtered : allTrips.slice(0, 2)); // Fallback to show SOMETHING for demo
         } catch (error) {
@@ -30,7 +30,7 @@ export const DriverDashboard = () => {
         }
     };
 
-    const currentTrip = myTrips.find(t => t.tripStatus === 'InProgress');
+    const currentTrip = myTrips.find(t => t.tripStatus === 'InTransit');
     const upcomingTrips = myTrips.filter(t => t.tripStatus === 'Planned');
 
     if (loading) return <div className="p-8 text-center text-sm text-gray-500">Loading Schedule...</div>;

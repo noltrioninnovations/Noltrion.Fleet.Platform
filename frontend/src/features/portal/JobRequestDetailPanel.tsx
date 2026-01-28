@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import type { JobRequest } from '../../services/jobRequestService';
-import { X, Package, Calendar, MapPin, Truck, CheckCircle, Clock, AlertCircle } from 'lucide-react';
+import { X, Package, Calendar, MapPin, CheckCircle } from 'lucide-react';
 import { MapDisplay } from '../../components/ui/MapDisplay';
 
 interface JobRequestDetailPanelProps {
@@ -104,8 +104,8 @@ export const JobRequestDetailPanel: React.FC<JobRequestDetailPanelProps> = ({
                             </div>
                             <MapDisplay
                                 markers={[
-                                    { lat: 0, lng: 0, label: 'Pickup', type: 'customer' },
-                                    { lat: 0, lng: 0, label: 'Drop', type: 'customer' }
+                                    { lat: 0, lng: 0, label: 'Pickup', type: 'pickup' },
+                                    { lat: 0, lng: 0, label: 'Drop', type: 'delivery' }
                                 ]}
                                 height="150px"
                             />

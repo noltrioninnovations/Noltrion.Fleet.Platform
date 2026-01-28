@@ -22,8 +22,8 @@ export const OpsDashboard = () => {
         }
     };
 
-    const inProgressTrips = trips.filter(t => t.tripStatus === 'InProgress');
-    const delayedTrips = trips.filter(t => t.tripStatus === 'InProgress' && t.endTime && new Date(t.endTime) < new Date()); // Mock delay logic
+    const inProgressTrips = trips.filter(t => t.tripStatus === 'InTransit');
+    const delayedTrips = trips.filter(t => t.tripStatus === 'InTransit' && t.endTime && new Date(t.endTime) < new Date()); // Mock delay logic
 
     if (loading) return <div className="p-8 text-center text-sm text-gray-500">Loading Operations Center...</div>;
 

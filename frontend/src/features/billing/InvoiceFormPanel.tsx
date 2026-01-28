@@ -13,7 +13,7 @@ export const InvoiceFormPanel: React.FC<InvoiceFormPanelProps> = ({ tripId, isOp
     const [invoice, setInvoice] = useState<Invoice | null>(null);
     const [loading, setLoading] = useState(false);
     const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-    const [customerName, setCustomerName] = useState(''); // Would fetch from Trip context if available
+
 
     useEffect(() => {
         if (isOpen && tripId) {

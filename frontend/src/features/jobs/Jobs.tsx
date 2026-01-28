@@ -3,7 +3,7 @@ import { getJobs, createJob, updateJob, cancelJob } from '../../services/jobServ
 import type { Job } from '../../services/jobService';
 import { MasterDetailLayout } from '../../components/layout/MasterDetailLayout';
 import { JobDetailPanel } from './JobDetailPanel';
-import { Package, Search, Plus, RefreshCw } from 'lucide-react';
+import { Package, Search, Plus, RefreshCw, MapPin } from 'lucide-react';
 
 export const Jobs: React.FC = () => {
     const [jobs, setJobs] = useState<Job[]>([]);

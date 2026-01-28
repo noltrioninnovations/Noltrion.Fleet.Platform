@@ -37,7 +37,7 @@ export const getInvoices = async (): Promise<Invoice[]> => {
 export const getInvoiceByTripId = async (tripId: string): Promise<Invoice | null> => {
     try {
         const response = await fleetApi.get<ApiResult<Invoice>>(`${API_URL}/trip/${tripId}`);
-        return response.data.data;
+        return response.data.data || null;
     } catch (error) {
         return null; // Return null if not found (404)
     }
@@ -45,7 +45,7 @@ export const getInvoiceByTripId = async (tripId: string): Promise<Invoice | null
 
 export const generateInvoice = async (tripId: string): Promise<Invoice | null> => {
     const response = await fleetApi.post<ApiResult<Invoice>>(`${API_URL}/generate/${tripId}`);
-    return response.data.data;
+    return response.data.data || null;
 };
 
 export const updateInvoiceStatus = async (id: string, status: string): Promise<boolean> => {
