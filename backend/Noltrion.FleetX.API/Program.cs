@@ -105,18 +105,25 @@ builder.Services.AddSwaggerGen(options =>
     options.CustomSchemaIds(type => type.ToString());
 });
 
-// CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend",
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:5173", "http://localhost:3000") // Allow Vite and CRA defaults
-                  .AllowAnyHeader()
-                  .AllowAnyMethod()
-                  .AllowCredentials();
-        });
+    options.AddPolicy("AllowFleetXUI", policy =>
+    {
+        policy
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials()
+            .WithOrigins(
+                "http://localhost:5173", 
+                "http://localhost:3000",
+                "https://localhost:44304",
+                "http://15.206.100.23",                
+                "http://fleetx.noltrion.com",
+                "https://fleetx.noltrion.com"
+            );
+    });
 });
+
 
 var app = builder.Build();
 
@@ -124,7 +131,7 @@ var app = builder.Build();
     app.UseSwagger();
     app.UseSwaggerUI();
 
-app.UseCors("AllowFrontend");
+app.UseCors("AllowFleetXUI");
 
 app.UseHttpsRedirection();
 
